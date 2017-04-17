@@ -1,6 +1,6 @@
 name := "vdom"
 
-//version := "2017.3.0-SNAPSHOT"
+//version := "2017.4.0-SNAPSHOT"
 
 enablePlugins(ScalaJSPlugin)
 
@@ -20,8 +20,8 @@ scalacOptions ++= Seq(
 )
 
 //Dependencies
-libraryDependencies += "scalajs-react-interface" %%% "core" % "2017.3.23-beta" % Provided
-libraryDependencies += "scalajs-react-interface" %%% "universal" % "2017.3.23-beta" % Provided
+libraryDependencies += "scalajs-react-interface" %%% "core" % "2017.3.26-beta" % Provided
+libraryDependencies += "scalajs-react-interface" %%% "universal" % "2017.4.9-beta" % Provided
 
 //bintray
 resolvers += Resolver.jcenterRepo

@@ -1,6 +1,7 @@
 package sri.web.vdom
 
 import org.scalajs.dom
+import sri.core._
 import sri.macros.{
   FunctionObjectMacro,
   exclude,
@@ -8,29 +9,21 @@ import sri.macros.{
   OptionalParam => U
 }
 import sri.universal.MergeJSObjects
-import sri.core._
 
 import scala.scalajs.js
 import scala.scalajs.js.Dynamic.{literal => json}
 import scala.scalajs.js.JSConverters.genTravConvertible2JSRichGenTrav
 import scala.scalajs.js.`|`
-import sri.macros.{
-  FunctionObjectMacro,
-  exclude,
-  OptDefault => NoValue,
-  OptionalParam => U
-}
-import sri.universal.MergeJSObjects
 
-trait Tags {
+trait Tags extends ReactEventAliases {
 
   @inline
-  def solidcolor(style: U[js.Any] = NoValue,
-                 id: U[String] = NoValue,
-                 className: U[String] = NoValue,
-                 @exclude key: String | Int = null,
-                 @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                 @exclude extraProps: U[DOMProps] = NoValue)(
+  def solidcolor[T <: dom.Node](style: U[js.Any] = NoValue,
+                                id: U[String] = NoValue,
+                                className: U[String] = NoValue,
+                                @exclude key: String | Int = null,
+                                @exclude ref: js.Function1[T, Unit] = null,
+                                @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -42,12 +35,12 @@ trait Tags {
     CreateDOMElement("solidcolor", json(), children = children.toJSArray)
 
   @inline
-  def big(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def big[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -59,12 +52,12 @@ trait Tags {
     CreateDOMElement("big", json(), children = children.toJSArray)
 
   @inline
-  def tr(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def tr[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -76,12 +69,12 @@ trait Tags {
     CreateDOMElement("tr", json(), children = children.toJSArray)
 
   @inline
-  def cite(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def cite[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -93,12 +86,12 @@ trait Tags {
     CreateDOMElement("cite", json(), children = children.toJSArray)
 
   @inline
-  def html(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def html[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -110,12 +103,12 @@ trait Tags {
     CreateDOMElement("html", json(), children = children.toJSArray)
 
   @inline
-  def footer(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def footer[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -127,12 +120,12 @@ trait Tags {
     CreateDOMElement("footer", json(), children = children.toJSArray)
 
   @inline
-  def h4(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def h4[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -144,12 +137,12 @@ trait Tags {
     CreateDOMElement("h4", json(), children = children.toJSArray)
 
   @inline
-  def caption(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def caption[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -161,12 +154,12 @@ trait Tags {
     CreateDOMElement("caption", json(), children = children.toJSArray)
 
   @inline
-  def datalist(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def datalist[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -178,12 +171,12 @@ trait Tags {
     CreateDOMElement("datalist", json(), children = children.toJSArray)
 
   @inline
-  def header(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def header[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -195,24 +188,25 @@ trait Tags {
     CreateDOMElement("header", json(), children = children.toJSArray)
 
   @inline
-  def wbr(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def wbr[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("wbr", props)
   }
 
   @inline
-  def canvas(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def canvas[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -224,36 +218,38 @@ trait Tags {
     CreateDOMElement("canvas", json(), children = children.toJSArray)
 
   @inline
-  def base(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def base[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("base", props)
   }
 
   @inline
-  def source(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def source[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("source", props)
   }
 
   @inline
-  def feFuncB(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def feFuncB[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -265,12 +261,12 @@ trait Tags {
     CreateDOMElement("feFuncB", json(), children = children.toJSArray)
 
   @inline
-  def b(style: U[js.Any] = NoValue,
-        id: U[String] = NoValue,
-        className: U[String] = NoValue,
-        @exclude key: String | Int = null,
-        @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-        @exclude extraProps: U[DOMProps] = NoValue)(
+  def b[T <: dom.Node](style: U[js.Any] = NoValue,
+                       id: U[String] = NoValue,
+                       className: U[String] = NoValue,
+                       @exclude key: String | Int = null,
+                       @exclude ref: js.Function1[T, Unit] = null,
+                       @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -282,12 +278,12 @@ trait Tags {
     CreateDOMElement("b", json(), children = children.toJSArray)
 
   @inline
-  def mesh(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def mesh[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -299,12 +295,12 @@ trait Tags {
     CreateDOMElement("mesh", json(), children = children.toJSArray)
 
   @inline
-  def table(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def table[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -316,12 +312,12 @@ trait Tags {
     CreateDOMElement("table", json(), children = children.toJSArray)
 
   @inline
-  def style(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def style[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -333,12 +329,12 @@ trait Tags {
     CreateDOMElement("style", json(), children = children.toJSArray)
 
   @inline
-  def title(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def title[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -350,24 +346,25 @@ trait Tags {
     CreateDOMElement("title", json(), children = children.toJSArray)
 
   @inline
-  def keygen(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def keygen[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("keygen", props)
   }
 
   @inline
-  def tfoot(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def tfoot[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -379,12 +376,12 @@ trait Tags {
     CreateDOMElement("tfoot", json(), children = children.toJSArray)
 
   @inline
-  def view(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def view[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -396,24 +393,25 @@ trait Tags {
     CreateDOMElement("view", json(), children = children.toJSArray)
 
   @inline
-  def area(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def area[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("area", props)
   }
 
   @inline
-  def details(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def details[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -425,12 +423,13 @@ trait Tags {
     CreateDOMElement("details", json(), children = children.toJSArray)
 
   @inline
-  def feDistantLight(style: U[js.Any] = NoValue,
-                     id: U[String] = NoValue,
-                     className: U[String] = NoValue,
-                     @exclude key: String | Int = null,
-                     @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                     @exclude extraProps: U[DOMProps] = NoValue)(
+  def feDistantLight[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -442,12 +441,12 @@ trait Tags {
     CreateDOMElement("feDistantLight", json(), children = children.toJSArray)
 
   @inline
-  def hgroup(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def hgroup[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -459,24 +458,25 @@ trait Tags {
     CreateDOMElement("hgroup", json(), children = children.toJSArray)
 
   @inline
-  def hr(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def hr[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("hr", props)
   }
 
   @inline
-  def q(style: U[js.Any] = NoValue,
-        id: U[String] = NoValue,
-        className: U[String] = NoValue,
-        @exclude key: String | Int = null,
-        @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-        @exclude extraProps: U[DOMProps] = NoValue)(
+  def q[T <: dom.Node](style: U[js.Any] = NoValue,
+                       id: U[String] = NoValue,
+                       className: U[String] = NoValue,
+                       @exclude key: String | Int = null,
+                       @exclude ref: js.Function1[T, Unit] = null,
+                       @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -488,12 +488,12 @@ trait Tags {
     CreateDOMElement("q", json(), children = children.toJSArray)
 
   @inline
-  def meshpatch(style: U[js.Any] = NoValue,
-                id: U[String] = NoValue,
-                className: U[String] = NoValue,
-                @exclude key: String | Int = null,
-                @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                @exclude extraProps: U[DOMProps] = NoValue)(
+  def meshpatch[T <: dom.Node](style: U[js.Any] = NoValue,
+                               id: U[String] = NoValue,
+                               className: U[String] = NoValue,
+                               @exclude key: String | Int = null,
+                               @exclude ref: js.Function1[T, Unit] = null,
+                               @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -505,12 +505,12 @@ trait Tags {
     CreateDOMElement("meshpatch", json(), children = children.toJSArray)
 
   @inline
-  def legend(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def legend[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -522,12 +522,12 @@ trait Tags {
     CreateDOMElement("legend", json(), children = children.toJSArray)
 
   @inline
-  def feTurbulence(style: U[js.Any] = NoValue,
-                   id: U[String] = NoValue,
-                   className: U[String] = NoValue,
-                   @exclude key: String | Int = null,
-                   @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                   @exclude extraProps: U[DOMProps] = NoValue)(
+  def feTurbulence[T <: dom.Node](style: U[js.Any] = NoValue,
+                                  id: U[String] = NoValue,
+                                  className: U[String] = NoValue,
+                                  @exclude key: String | Int = null,
+                                  @exclude ref: js.Function1[T, Unit] = null,
+                                  @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -539,12 +539,12 @@ trait Tags {
     CreateDOMElement("feTurbulence", json(), children = children.toJSArray)
 
   @inline
-  def set(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def set[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -556,24 +556,25 @@ trait Tags {
     CreateDOMElement("set", json(), children = children.toJSArray)
 
   @inline
-  def link(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def link[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("link", props)
   }
 
   @inline
-  def meshgradient(style: U[js.Any] = NoValue,
-                   id: U[String] = NoValue,
-                   className: U[String] = NoValue,
-                   @exclude key: String | Int = null,
-                   @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                   @exclude extraProps: U[DOMProps] = NoValue)(
+  def meshgradient[T <: dom.Node](style: U[js.Any] = NoValue,
+                                  id: U[String] = NoValue,
+                                  className: U[String] = NoValue,
+                                  @exclude key: String | Int = null,
+                                  @exclude ref: js.Function1[T, Unit] = null,
+                                  @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -585,12 +586,12 @@ trait Tags {
     CreateDOMElement("meshgradient", json(), children = children.toJSArray)
 
   @inline
-  def del(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def del[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -602,12 +603,12 @@ trait Tags {
     CreateDOMElement("del", json(), children = children.toJSArray)
 
   @inline
-  def line(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def line[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -619,12 +620,12 @@ trait Tags {
     CreateDOMElement("line", json(), children = children.toJSArray)
 
   @inline
-  def rt(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def rt[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -636,12 +637,12 @@ trait Tags {
     CreateDOMElement("rt", json(), children = children.toJSArray)
 
   @inline
-  def map(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def map[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -653,12 +654,12 @@ trait Tags {
     CreateDOMElement("map", json(), children = children.toJSArray)
 
   @inline
-  def fieldset(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def fieldset[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -670,12 +671,12 @@ trait Tags {
     CreateDOMElement("fieldset", json(), children = children.toJSArray)
 
   @inline
-  def menu(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def menu[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -687,12 +688,12 @@ trait Tags {
     CreateDOMElement("menu", json(), children = children.toJSArray)
 
   @inline
-  def polygon(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def polygon[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -704,12 +705,12 @@ trait Tags {
     CreateDOMElement("polygon", json(), children = children.toJSArray)
 
   @inline
-  def ol(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def ol[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -721,12 +722,12 @@ trait Tags {
     CreateDOMElement("ol", json(), children = children.toJSArray)
 
   @inline
-  def unknown(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def unknown[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -738,12 +739,12 @@ trait Tags {
     CreateDOMElement("unknown", json(), children = children.toJSArray)
 
   @inline
-  def tbody(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def tbody[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -755,12 +756,13 @@ trait Tags {
     CreateDOMElement("tbody", json(), children = children.toJSArray)
 
   @inline
-  def feDiffuseLighting(style: U[js.Any] = NoValue,
-                        id: U[String] = NoValue,
-                        className: U[String] = NoValue,
-                        @exclude key: String | Int = null,
-                        @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                        @exclude extraProps: U[DOMProps] = NoValue)(
+  def feDiffuseLighting[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -774,12 +776,12 @@ trait Tags {
                      children = children.toJSArray)
 
   @inline
-  def feImage(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def feImage[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -791,12 +793,12 @@ trait Tags {
     CreateDOMElement("feImage", json(), children = children.toJSArray)
 
   @inline
-  def pre(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def pre[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -808,12 +810,12 @@ trait Tags {
     CreateDOMElement("pre", json(), children = children.toJSArray)
 
   @inline
-  def filter(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def filter[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -825,12 +827,12 @@ trait Tags {
     CreateDOMElement("filter", json(), children = children.toJSArray)
 
   @inline
-  def optgroup(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def optgroup[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -842,12 +844,12 @@ trait Tags {
     CreateDOMElement("optgroup", json(), children = children.toJSArray)
 
   @inline
-  def mask(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def mask[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -859,24 +861,25 @@ trait Tags {
     CreateDOMElement("mask", json(), children = children.toJSArray)
 
   @inline
-  def embed(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def embed[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("embed", props)
   }
 
   @inline
-  def u(style: U[js.Any] = NoValue,
-        id: U[String] = NoValue,
-        className: U[String] = NoValue,
-        @exclude key: String | Int = null,
-        @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-        @exclude extraProps: U[DOMProps] = NoValue)(
+  def u[T <: dom.Node](style: U[js.Any] = NoValue,
+                       id: U[String] = NoValue,
+                       className: U[String] = NoValue,
+                       @exclude key: String | Int = null,
+                       @exclude ref: js.Function1[T, Unit] = null,
+                       @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -888,12 +891,12 @@ trait Tags {
     CreateDOMElement("u", json(), children = children.toJSArray)
 
   @inline
-  def image(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def image[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -905,12 +908,12 @@ trait Tags {
     CreateDOMElement("image", json(), children = children.toJSArray)
 
   @inline
-  def select(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def select[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -922,12 +925,12 @@ trait Tags {
     CreateDOMElement("select", json(), children = children.toJSArray)
 
   @inline
-  def s(style: U[js.Any] = NoValue,
-        id: U[String] = NoValue,
-        className: U[String] = NoValue,
-        @exclude key: String | Int = null,
-        @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-        @exclude extraProps: U[DOMProps] = NoValue)(
+  def s[T <: dom.Node](style: U[js.Any] = NoValue,
+                       id: U[String] = NoValue,
+                       className: U[String] = NoValue,
+                       @exclude key: String | Int = null,
+                       @exclude ref: js.Function1[T, Unit] = null,
+                       @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -939,12 +942,12 @@ trait Tags {
     CreateDOMElement("s", json(), children = children.toJSArray)
 
   @inline
-  def use(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def use[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -956,24 +959,28 @@ trait Tags {
     CreateDOMElement("use", json(), children = children.toJSArray)
 
   @inline
-  def input(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def input[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      onChange: U[ReactEventI => _] = NoValue,
+      value: U[String | Int | Double] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+    import sri.universal.DangerousUnionToJSAnyImplicit._
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("input", props)
   }
 
   @inline
-  def thead(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def thead[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -985,12 +992,12 @@ trait Tags {
     CreateDOMElement("thead", json(), children = children.toJSArray)
 
   @inline
-  def feMergeNode(style: U[js.Any] = NoValue,
-                  id: U[String] = NoValue,
-                  className: U[String] = NoValue,
-                  @exclude key: String | Int = null,
-                  @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                  @exclude extraProps: U[DOMProps] = NoValue)(
+  def feMergeNode[T <: dom.Node](style: U[js.Any] = NoValue,
+                                 id: U[String] = NoValue,
+                                 className: U[String] = NoValue,
+                                 @exclude key: String | Int = null,
+                                 @exclude ref: js.Function1[T, Unit] = null,
+                                 @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1002,12 +1009,12 @@ trait Tags {
     CreateDOMElement("feMergeNode", json(), children = children.toJSArray)
 
   @inline
-  def h6(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def h6[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1019,12 +1026,12 @@ trait Tags {
     CreateDOMElement("h6", json(), children = children.toJSArray)
 
   @inline
-  def abbr(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def abbr[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1036,12 +1043,12 @@ trait Tags {
     CreateDOMElement("abbr", json(), children = children.toJSArray)
 
   @inline
-  def meshrow(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def meshrow[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1053,12 +1060,12 @@ trait Tags {
     CreateDOMElement("meshrow", json(), children = children.toJSArray)
 
   @inline
-  def td(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def td[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1070,12 +1077,12 @@ trait Tags {
     CreateDOMElement("td", json(), children = children.toJSArray)
 
   @inline
-  def em(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def em[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1087,12 +1094,12 @@ trait Tags {
     CreateDOMElement("em", json(), children = children.toJSArray)
 
   @inline
-  def feFlood(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def feFlood[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1104,12 +1111,12 @@ trait Tags {
     CreateDOMElement("feFlood", json(), children = children.toJSArray)
 
   @inline
-  def svg(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def svg[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1121,12 +1128,12 @@ trait Tags {
     CreateDOMElement("svg", json(), children = children.toJSArray)
 
   @inline
-  def colgroup(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def colgroup[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1138,24 +1145,25 @@ trait Tags {
     CreateDOMElement("colgroup", json(), children = children.toJSArray)
 
   @inline
-  def track(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def track[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("track", props)
   }
 
   @inline
-  def bdo(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def bdo[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1167,12 +1175,12 @@ trait Tags {
     CreateDOMElement("bdo", json(), children = children.toJSArray)
 
   @inline
-  def circle(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def circle[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1184,12 +1192,12 @@ trait Tags {
     CreateDOMElement("circle", json(), children = children.toJSArray)
 
   @inline
-  def time(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def time[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1201,12 +1209,12 @@ trait Tags {
     CreateDOMElement("time", json(), children = children.toJSArray)
 
   @inline
-  def feBlend(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def feBlend[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1218,12 +1226,12 @@ trait Tags {
     CreateDOMElement("feBlend", json(), children = children.toJSArray)
 
   @inline
-  def ul(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def ul[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1235,12 +1243,12 @@ trait Tags {
     CreateDOMElement("ul", json(), children = children.toJSArray)
 
   @inline
-  def body(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def body[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1252,12 +1260,12 @@ trait Tags {
     CreateDOMElement("body", json(), children = children.toJSArray)
 
   @inline
-  def output(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def output[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1269,12 +1277,12 @@ trait Tags {
     CreateDOMElement("output", json(), children = children.toJSArray)
 
   @inline
-  def feOffset(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def feOffset[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1286,12 +1294,12 @@ trait Tags {
     CreateDOMElement("feOffset", json(), children = children.toJSArray)
 
   @inline
-  def `var`(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def `var`[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1303,12 +1311,12 @@ trait Tags {
     CreateDOMElement("var", json(), children = children.toJSArray)
 
   @inline
-  def progress(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def progress[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1320,12 +1328,12 @@ trait Tags {
     CreateDOMElement("progress", json(), children = children.toJSArray)
 
   @inline
-  def h1(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def h1[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1337,12 +1345,12 @@ trait Tags {
     CreateDOMElement("h1", json(), children = children.toJSArray)
 
   @inline
-  def figcaption(style: U[js.Any] = NoValue,
-                 id: U[String] = NoValue,
-                 className: U[String] = NoValue,
-                 @exclude key: String | Int = null,
-                 @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                 @exclude extraProps: U[DOMProps] = NoValue)(
+  def figcaption[T <: dom.Node](style: U[js.Any] = NoValue,
+                                id: U[String] = NoValue,
+                                className: U[String] = NoValue,
+                                @exclude key: String | Int = null,
+                                @exclude ref: js.Function1[T, Unit] = null,
+                                @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1354,12 +1362,12 @@ trait Tags {
     CreateDOMElement("figcaption", json(), children = children.toJSArray)
 
   @inline
-  def stop(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def stop[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1371,12 +1379,12 @@ trait Tags {
     CreateDOMElement("stop", json(), children = children.toJSArray)
 
   @inline
-  def defs(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def defs[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1388,12 +1396,12 @@ trait Tags {
     CreateDOMElement("defs", json(), children = children.toJSArray)
 
   @inline
-  def iframe(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def iframe[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1405,12 +1413,12 @@ trait Tags {
     CreateDOMElement("iframe", json(), children = children.toJSArray)
 
   @inline
-  def small(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def small[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1422,12 +1430,12 @@ trait Tags {
     CreateDOMElement("small", json(), children = children.toJSArray)
 
   @inline
-  def textPath(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def textPath[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1439,12 +1447,12 @@ trait Tags {
     CreateDOMElement("textPath", json(), children = children.toJSArray)
 
   @inline
-  def picture(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def picture[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1456,12 +1464,12 @@ trait Tags {
     CreateDOMElement("picture", json(), children = children.toJSArray)
 
   @inline
-  def a(style: U[js.Any] = NoValue,
-        id: U[String] = NoValue,
-        className: U[String] = NoValue,
-        @exclude key: String | Int = null,
-        @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-        @exclude extraProps: U[DOMProps] = NoValue)(
+  def a[T <: dom.Node](style: U[js.Any] = NoValue,
+                       id: U[String] = NoValue,
+                       className: U[String] = NoValue,
+                       @exclude key: String | Int = null,
+                       @exclude ref: js.Function1[T, Unit] = null,
+                       @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1473,24 +1481,25 @@ trait Tags {
     CreateDOMElement("a", json(), children = children.toJSArray)
 
   @inline
-  def meta(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def meta[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("meta", props)
   }
 
   @inline
-  def article(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def article[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1502,12 +1511,12 @@ trait Tags {
     CreateDOMElement("article", json(), children = children.toJSArray)
 
   @inline
-  def blockquote(style: U[js.Any] = NoValue,
-                 id: U[String] = NoValue,
-                 className: U[String] = NoValue,
-                 @exclude key: String | Int = null,
-                 @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                 @exclude extraProps: U[DOMProps] = NoValue)(
+  def blockquote[T <: dom.Node](style: U[js.Any] = NoValue,
+                                id: U[String] = NoValue,
+                                className: U[String] = NoValue,
+                                @exclude key: String | Int = null,
+                                @exclude ref: js.Function1[T, Unit] = null,
+                                @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1519,12 +1528,12 @@ trait Tags {
     CreateDOMElement("blockquote", json(), children = children.toJSArray)
 
   @inline
-  def fePointLight(style: U[js.Any] = NoValue,
-                   id: U[String] = NoValue,
-                   className: U[String] = NoValue,
-                   @exclude key: String | Int = null,
-                   @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                   @exclude extraProps: U[DOMProps] = NoValue)(
+  def fePointLight[T <: dom.Node](style: U[js.Any] = NoValue,
+                                  id: U[String] = NoValue,
+                                  className: U[String] = NoValue,
+                                  @exclude key: String | Int = null,
+                                  @exclude ref: js.Function1[T, Unit] = null,
+                                  @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1536,12 +1545,12 @@ trait Tags {
     CreateDOMElement("fePointLight", json(), children = children.toJSArray)
 
   @inline
-  def feFuncA(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def feFuncA[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1553,12 +1562,12 @@ trait Tags {
     CreateDOMElement("feFuncA", json(), children = children.toJSArray)
 
   @inline
-  def bdi(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def bdi[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1570,12 +1579,12 @@ trait Tags {
     CreateDOMElement("bdi", json(), children = children.toJSArray)
 
   @inline
-  def li(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def li[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1587,12 +1596,12 @@ trait Tags {
     CreateDOMElement("li", json(), children = children.toJSArray)
 
   @inline
-  def cursor(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def cursor[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1604,12 +1613,12 @@ trait Tags {
     CreateDOMElement("cursor", json(), children = children.toJSArray)
 
   @inline
-  def h5(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def h5[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1621,24 +1630,25 @@ trait Tags {
     CreateDOMElement("h5", json(), children = children.toJSArray)
 
   @inline
-  def col(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def col[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("col", props)
   }
 
   @inline
-  def dialog(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def dialog[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1650,12 +1660,12 @@ trait Tags {
     CreateDOMElement("dialog", json(), children = children.toJSArray)
 
   @inline
-  def kbd(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def kbd[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1667,12 +1677,12 @@ trait Tags {
     CreateDOMElement("kbd", json(), children = children.toJSArray)
 
   @inline
-  def nav(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def nav[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1684,12 +1694,12 @@ trait Tags {
     CreateDOMElement("nav", json(), children = children.toJSArray)
 
   @inline
-  def aside(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def aside[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1701,12 +1711,13 @@ trait Tags {
     CreateDOMElement("aside", json(), children = children.toJSArray)
 
   @inline
-  def animateTransform(style: U[js.Any] = NoValue,
-                       id: U[String] = NoValue,
-                       className: U[String] = NoValue,
-                       @exclude key: String | Int = null,
-                       @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                       @exclude extraProps: U[DOMProps] = NoValue)(
+  def animateTransform[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1718,12 +1729,12 @@ trait Tags {
     CreateDOMElement("animateTransform", json(), children = children.toJSArray)
 
   @inline
-  def g(style: U[js.Any] = NoValue,
-        id: U[String] = NoValue,
-        className: U[String] = NoValue,
-        @exclude key: String | Int = null,
-        @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-        @exclude extraProps: U[DOMProps] = NoValue)(
+  def g[T <: dom.Node](style: U[js.Any] = NoValue,
+                       id: U[String] = NoValue,
+                       className: U[String] = NoValue,
+                       @exclude key: String | Int = null,
+                       @exclude ref: js.Function1[T, Unit] = null,
+                       @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1735,12 +1746,12 @@ trait Tags {
     CreateDOMElement("g", json(), children = children.toJSArray)
 
   @inline
-  def span(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def span[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1752,12 +1763,12 @@ trait Tags {
     CreateDOMElement("span", json(), children = children.toJSArray)
 
   @inline
-  def ellipse(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def ellipse[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1769,12 +1780,12 @@ trait Tags {
     CreateDOMElement("ellipse", json(), children = children.toJSArray)
 
   @inline
-  def feSpotLight(style: U[js.Any] = NoValue,
-                  id: U[String] = NoValue,
-                  className: U[String] = NoValue,
-                  @exclude key: String | Int = null,
-                  @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                  @exclude extraProps: U[DOMProps] = NoValue)(
+  def feSpotLight[T <: dom.Node](style: U[js.Any] = NoValue,
+                                 id: U[String] = NoValue,
+                                 className: U[String] = NoValue,
+                                 @exclude key: String | Int = null,
+                                 @exclude ref: js.Function1[T, Unit] = null,
+                                 @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1786,12 +1797,12 @@ trait Tags {
     CreateDOMElement("feSpotLight", json(), children = children.toJSArray)
 
   @inline
-  def feFuncG(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def feFuncG[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1803,12 +1814,12 @@ trait Tags {
     CreateDOMElement("feFuncG", json(), children = children.toJSArray)
 
   @inline
-  def th(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def th[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1820,12 +1831,12 @@ trait Tags {
     CreateDOMElement("th", json(), children = children.toJSArray)
 
   @inline
-  def pattern(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def pattern[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1837,12 +1848,12 @@ trait Tags {
     CreateDOMElement("pattern", json(), children = children.toJSArray)
 
   @inline
-  def ins(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def ins[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1854,12 +1865,12 @@ trait Tags {
     CreateDOMElement("ins", json(), children = children.toJSArray)
 
   @inline
-  def p(style: U[js.Any] = NoValue,
-        id: U[String] = NoValue,
-        className: U[String] = NoValue,
-        @exclude key: String | Int = null,
-        @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-        @exclude extraProps: U[DOMProps] = NoValue)(
+  def p[T <: dom.Node](style: U[js.Any] = NoValue,
+                       id: U[String] = NoValue,
+                       className: U[String] = NoValue,
+                       @exclude key: String | Int = null,
+                       @exclude ref: js.Function1[T, Unit] = null,
+                       @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1871,12 +1882,12 @@ trait Tags {
     CreateDOMElement("p", json(), children = children.toJSArray)
 
   @inline
-  def `object`(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def `object`[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1888,12 +1899,12 @@ trait Tags {
     CreateDOMElement("object", json(), children = children.toJSArray)
 
   @inline
-  def hatchpath(style: U[js.Any] = NoValue,
-                id: U[String] = NoValue,
-                className: U[String] = NoValue,
-                @exclude key: String | Int = null,
-                @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                @exclude extraProps: U[DOMProps] = NoValue)(
+  def hatchpath[T <: dom.Node](style: U[js.Any] = NoValue,
+                               id: U[String] = NoValue,
+                               className: U[String] = NoValue,
+                               @exclude key: String | Int = null,
+                               @exclude ref: js.Function1[T, Unit] = null,
+                               @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1905,12 +1916,12 @@ trait Tags {
     CreateDOMElement("hatchpath", json(), children = children.toJSArray)
 
   @inline
-  def feMerge(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def feMerge[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1922,12 +1933,12 @@ trait Tags {
     CreateDOMElement("feMerge", json(), children = children.toJSArray)
 
   @inline
-  def feColorMatrix(style: U[js.Any] = NoValue,
-                    id: U[String] = NoValue,
-                    className: U[String] = NoValue,
-                    @exclude key: String | Int = null,
-                    @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                    @exclude extraProps: U[DOMProps] = NoValue)(
+  def feColorMatrix[T <: dom.Node](style: U[js.Any] = NoValue,
+                                   id: U[String] = NoValue,
+                                   className: U[String] = NoValue,
+                                   @exclude key: String | Int = null,
+                                   @exclude ref: js.Function1[T, Unit] = null,
+                                   @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1939,12 +1950,12 @@ trait Tags {
     CreateDOMElement("feColorMatrix", json(), children = children.toJSArray)
 
   @inline
-  def script(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def script[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1956,12 +1967,12 @@ trait Tags {
     CreateDOMElement("script", json(), children = children.toJSArray)
 
   @inline
-  def feMorphology(style: U[js.Any] = NoValue,
-                   id: U[String] = NoValue,
-                   className: U[String] = NoValue,
-                   @exclude key: String | Int = null,
-                   @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                   @exclude extraProps: U[DOMProps] = NoValue)(
+  def feMorphology[T <: dom.Node](style: U[js.Any] = NoValue,
+                                  id: U[String] = NoValue,
+                                  className: U[String] = NoValue,
+                                  @exclude key: String | Int = null,
+                                  @exclude ref: js.Function1[T, Unit] = null,
+                                  @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1973,12 +1984,12 @@ trait Tags {
     CreateDOMElement("feMorphology", json(), children = children.toJSArray)
 
   @inline
-  def summary(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def summary[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -1990,12 +2001,12 @@ trait Tags {
     CreateDOMElement("summary", json(), children = children.toJSArray)
 
   @inline
-  def feFuncR(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def feFuncR[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2007,24 +2018,25 @@ trait Tags {
     CreateDOMElement("feFuncR", json(), children = children.toJSArray)
 
   @inline
-  def br(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def br[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("br", props)
   }
 
   @inline
-  def sup(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def sup[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2036,12 +2048,12 @@ trait Tags {
     CreateDOMElement("sup", json(), children = children.toJSArray)
 
   @inline
-  def clipPath(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def clipPath[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2053,12 +2065,12 @@ trait Tags {
     CreateDOMElement("clipPath", json(), children = children.toJSArray)
 
   @inline
-  def dt(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def dt[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2070,12 +2082,12 @@ trait Tags {
     CreateDOMElement("dt", json(), children = children.toJSArray)
 
   @inline
-  def hatch(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def hatch[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2087,12 +2099,12 @@ trait Tags {
     CreateDOMElement("hatch", json(), children = children.toJSArray)
 
   @inline
-  def code(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def code[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2104,12 +2116,12 @@ trait Tags {
     CreateDOMElement("code", json(), children = children.toJSArray)
 
   @inline
-  def polyline(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def polyline[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2121,12 +2133,12 @@ trait Tags {
     CreateDOMElement("polyline", json(), children = children.toJSArray)
 
   @inline
-  def h2(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def h2[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2138,24 +2150,25 @@ trait Tags {
     CreateDOMElement("h2", json(), children = children.toJSArray)
 
   @inline
-  def menuitem(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def menuitem[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("menuitem", props)
   }
 
   @inline
-  def address(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def address[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2167,13 +2180,13 @@ trait Tags {
     CreateDOMElement("address", json(), children = children.toJSArray)
 
   @inline
-  def feComponentTransfer(style: U[js.Any] = NoValue,
-                          id: U[String] = NoValue,
-                          className: U[String] = NoValue,
-                          @exclude key: String | Int = null,
-                          @exclude ref: js.Function1[_ <: dom.Node, Unit] =
-                            null,
-                          @exclude extraProps: U[DOMProps] = NoValue)(
+  def feComponentTransfer[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2189,12 +2202,12 @@ trait Tags {
                      children = children.toJSArray)
 
   @inline
-  def feDropShadow(style: U[js.Any] = NoValue,
-                   id: U[String] = NoValue,
-                   className: U[String] = NoValue,
-                   @exclude key: String | Int = null,
-                   @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                   @exclude extraProps: U[DOMProps] = NoValue)(
+  def feDropShadow[T <: dom.Node](style: U[js.Any] = NoValue,
+                                  id: U[String] = NoValue,
+                                  className: U[String] = NoValue,
+                                  @exclude key: String | Int = null,
+                                  @exclude ref: js.Function1[T, Unit] = null,
+                                  @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2206,12 +2219,12 @@ trait Tags {
     CreateDOMElement("feDropShadow", json(), children = children.toJSArray)
 
   @inline
-  def ruby(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def ruby[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2223,12 +2236,12 @@ trait Tags {
     CreateDOMElement("ruby", json(), children = children.toJSArray)
 
   @inline
-  def feSpecularLighting(
+  def feSpecularLighting[T <: dom.Node](
       style: U[js.Any] = NoValue,
       id: U[String] = NoValue,
       className: U[String] = NoValue,
       @exclude key: String | Int = null,
-      @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
+      @exclude ref: js.Function1[T, Unit] = null,
       @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
@@ -2245,12 +2258,12 @@ trait Tags {
                      children = children.toJSArray)
 
   @inline
-  def path(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def path[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2262,12 +2275,12 @@ trait Tags {
     CreateDOMElement("path", json(), children = children.toJSArray)
 
   @inline
-  def feTile(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def feTile[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2279,12 +2292,12 @@ trait Tags {
     CreateDOMElement("feTile", json(), children = children.toJSArray)
 
   @inline
-  def metadata(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def metadata[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2296,12 +2309,13 @@ trait Tags {
     CreateDOMElement("metadata", json(), children = children.toJSArray)
 
   @inline
-  def feGaussianBlur(style: U[js.Any] = NoValue,
-                     id: U[String] = NoValue,
-                     className: U[String] = NoValue,
-                     @exclude key: String | Int = null,
-                     @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                     @exclude extraProps: U[DOMProps] = NoValue)(
+  def feGaussianBlur[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2313,12 +2327,12 @@ trait Tags {
     CreateDOMElement("feGaussianBlur", json(), children = children.toJSArray)
 
   @inline
-  def symbol(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def symbol[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2330,12 +2344,12 @@ trait Tags {
     CreateDOMElement("symbol", json(), children = children.toJSArray)
 
   @inline
-  def desc(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def desc[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2347,12 +2361,12 @@ trait Tags {
     CreateDOMElement("desc", json(), children = children.toJSArray)
 
   @inline
-  def dl(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def dl[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2364,12 +2378,12 @@ trait Tags {
     CreateDOMElement("dl", json(), children = children.toJSArray)
 
   @inline
-  def meter(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def meter[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2381,12 +2395,12 @@ trait Tags {
     CreateDOMElement("meter", json(), children = children.toJSArray)
 
   @inline
-  def figure(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def figure[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2398,12 +2412,12 @@ trait Tags {
     CreateDOMElement("figure", json(), children = children.toJSArray)
 
   @inline
-  def samp(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def samp[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2415,12 +2429,12 @@ trait Tags {
     CreateDOMElement("samp", json(), children = children.toJSArray)
 
   @inline
-  def rp(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def rp[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2432,12 +2446,12 @@ trait Tags {
     CreateDOMElement("rp", json(), children = children.toJSArray)
 
   @inline
-  def foreignObject(style: U[js.Any] = NoValue,
-                    id: U[String] = NoValue,
-                    className: U[String] = NoValue,
-                    @exclude key: String | Int = null,
-                    @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                    @exclude extraProps: U[DOMProps] = NoValue)(
+  def foreignObject[T <: dom.Node](style: U[js.Any] = NoValue,
+                                   id: U[String] = NoValue,
+                                   className: U[String] = NoValue,
+                                   @exclude key: String | Int = null,
+                                   @exclude ref: js.Function1[T, Unit] = null,
+                                   @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2449,12 +2463,12 @@ trait Tags {
     CreateDOMElement("foreignObject", json(), children = children.toJSArray)
 
   @inline
-  def dfn(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def dfn[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2466,12 +2480,13 @@ trait Tags {
     CreateDOMElement("dfn", json(), children = children.toJSArray)
 
   @inline
-  def feConvolveMatrix(style: U[js.Any] = NoValue,
-                       id: U[String] = NoValue,
-                       className: U[String] = NoValue,
-                       @exclude key: String | Int = null,
-                       @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                       @exclude extraProps: U[DOMProps] = NoValue)(
+  def feConvolveMatrix[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2483,12 +2498,12 @@ trait Tags {
     CreateDOMElement("feConvolveMatrix", json(), children = children.toJSArray)
 
   @inline
-  def option(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def option[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2500,12 +2515,12 @@ trait Tags {
     CreateDOMElement("option", json(), children = children.toJSArray)
 
   @inline
-  def head(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def head[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2517,12 +2532,12 @@ trait Tags {
     CreateDOMElement("head", json(), children = children.toJSArray)
 
   @inline
-  def video(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def video[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2534,12 +2549,12 @@ trait Tags {
     CreateDOMElement("video", json(), children = children.toJSArray)
 
   @inline
-  def main(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def main[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2551,12 +2566,12 @@ trait Tags {
     CreateDOMElement("main", json(), children = children.toJSArray)
 
   @inline
-  def i(style: U[js.Any] = NoValue,
-        id: U[String] = NoValue,
-        className: U[String] = NoValue,
-        @exclude key: String | Int = null,
-        @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-        @exclude extraProps: U[DOMProps] = NoValue)(
+  def i[T <: dom.Node](style: U[js.Any] = NoValue,
+                       id: U[String] = NoValue,
+                       className: U[String] = NoValue,
+                       @exclude key: String | Int = null,
+                       @exclude ref: js.Function1[T, Unit] = null,
+                       @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2568,12 +2583,12 @@ trait Tags {
     CreateDOMElement("i", json(), children = children.toJSArray)
 
   @inline
-  def sub(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def sub[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2585,12 +2600,12 @@ trait Tags {
     CreateDOMElement("sub", json(), children = children.toJSArray)
 
   @inline
-  def label(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def label[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2602,12 +2617,12 @@ trait Tags {
     CreateDOMElement("label", json(), children = children.toJSArray)
 
   @inline
-  def button(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def button[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2619,12 +2634,12 @@ trait Tags {
     CreateDOMElement("button", json(), children = children.toJSArray)
 
   @inline
-  def feComposite(style: U[js.Any] = NoValue,
-                  id: U[String] = NoValue,
-                  className: U[String] = NoValue,
-                  @exclude key: String | Int = null,
-                  @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                  @exclude extraProps: U[DOMProps] = NoValue)(
+  def feComposite[T <: dom.Node](style: U[js.Any] = NoValue,
+                                 id: U[String] = NoValue,
+                                 className: U[String] = NoValue,
+                                 @exclude key: String | Int = null,
+                                 @exclude ref: js.Function1[T, Unit] = null,
+                                 @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2636,12 +2651,12 @@ trait Tags {
     CreateDOMElement("feComposite", json(), children = children.toJSArray)
 
   @inline
-  def mpath(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def mpath[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2653,12 +2668,12 @@ trait Tags {
     CreateDOMElement("mpath", json(), children = children.toJSArray)
 
   @inline
-  def h3(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def h3[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2670,12 +2685,12 @@ trait Tags {
     CreateDOMElement("h3", json(), children = children.toJSArray)
 
   @inline
-  def animate(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def animate[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2687,12 +2702,12 @@ trait Tags {
     CreateDOMElement("animate", json(), children = children.toJSArray)
 
   @inline
-  def discard(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def discard[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2704,12 +2719,12 @@ trait Tags {
     CreateDOMElement("discard", json(), children = children.toJSArray)
 
   @inline
-  def section(style: U[js.Any] = NoValue,
-              id: U[String] = NoValue,
-              className: U[String] = NoValue,
-              @exclude key: String | Int = null,
-              @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-              @exclude extraProps: U[DOMProps] = NoValue)(
+  def section[T <: dom.Node](style: U[js.Any] = NoValue,
+                             id: U[String] = NoValue,
+                             className: U[String] = NoValue,
+                             @exclude key: String | Int = null,
+                             @exclude ref: js.Function1[T, Unit] = null,
+                             @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2721,12 +2736,13 @@ trait Tags {
     CreateDOMElement("section", json(), children = children.toJSArray)
 
   @inline
-  def linearGradient(style: U[js.Any] = NoValue,
-                     id: U[String] = NoValue,
-                     className: U[String] = NoValue,
-                     @exclude key: String | Int = null,
-                     @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                     @exclude extraProps: U[DOMProps] = NoValue)(
+  def linearGradient[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2738,12 +2754,12 @@ trait Tags {
     CreateDOMElement("linearGradient", json(), children = children.toJSArray)
 
   @inline
-  def text(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def text[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2755,12 +2771,12 @@ trait Tags {
     CreateDOMElement("text", json(), children = children.toJSArray)
 
   @inline
-  def div(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue)(
+  def div[T <: dom.Node](style: U[js.Any] = NoValue,
+                         id: U[String] = NoValue,
+                         className: U[String] = NoValue,
+                         @exclude key: String | Int = null,
+                         @exclude ref: js.Function1[T, Unit] = null,
+                         @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2772,12 +2788,12 @@ trait Tags {
     CreateDOMElement("div", json(), children = children.toJSArray)
 
   @inline
-  def audio(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def audio[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2789,12 +2805,12 @@ trait Tags {
     CreateDOMElement("audio", json(), children = children.toJSArray)
 
   @inline
-  def tspan(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue)(
+  def tspan[T <: dom.Node](style: U[js.Any] = NoValue,
+                           id: U[String] = NoValue,
+                           className: U[String] = NoValue,
+                           @exclude key: String | Int = null,
+                           @exclude ref: js.Function1[T, Unit] = null,
+                           @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2806,12 +2822,12 @@ trait Tags {
     CreateDOMElement("tspan", json(), children = children.toJSArray)
 
   @inline
-  def mark(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def mark[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2823,12 +2839,12 @@ trait Tags {
     CreateDOMElement("mark", json(), children = children.toJSArray)
 
   @inline
-  def animateMotion(style: U[js.Any] = NoValue,
-                    id: U[String] = NoValue,
-                    className: U[String] = NoValue,
-                    @exclude key: String | Int = null,
-                    @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                    @exclude extraProps: U[DOMProps] = NoValue)(
+  def animateMotion[T <: dom.Node](style: U[js.Any] = NoValue,
+                                   id: U[String] = NoValue,
+                                   className: U[String] = NoValue,
+                                   @exclude key: String | Int = null,
+                                   @exclude ref: js.Function1[T, Unit] = null,
+                                   @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2840,12 +2856,12 @@ trait Tags {
     CreateDOMElement("animateMotion", json(), children = children.toJSArray)
 
   @inline
-  def form(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def form[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2857,12 +2873,12 @@ trait Tags {
     CreateDOMElement("form", json(), children = children.toJSArray)
 
   @inline
-  def textarea(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def textarea[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2874,24 +2890,25 @@ trait Tags {
     CreateDOMElement("textarea", json(), children = children.toJSArray)
 
   @inline
-  def param(style: U[js.Any] = NoValue,
-            id: U[String] = NoValue,
-            className: U[String] = NoValue,
-            @exclude key: String | Int = null,
-            @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-            @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def param[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("param", props)
   }
 
   @inline
-  def marker(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def marker[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2903,12 +2920,12 @@ trait Tags {
     CreateDOMElement("marker", json(), children = children.toJSArray)
 
   @inline
-  def noscript(style: U[js.Any] = NoValue,
-               id: U[String] = NoValue,
-               className: U[String] = NoValue,
-               @exclude key: String | Int = null,
-               @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-               @exclude extraProps: U[DOMProps] = NoValue)(
+  def noscript[T <: dom.Node](style: U[js.Any] = NoValue,
+                              id: U[String] = NoValue,
+                              className: U[String] = NoValue,
+                              @exclude key: String | Int = null,
+                              @exclude ref: js.Function1[T, Unit] = null,
+                              @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2920,12 +2937,12 @@ trait Tags {
     CreateDOMElement("noscript", json(), children = children.toJSArray)
 
   @inline
-  def dd(style: U[js.Any] = NoValue,
-         id: U[String] = NoValue,
-         className: U[String] = NoValue,
-         @exclude key: String | Int = null,
-         @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-         @exclude extraProps: U[DOMProps] = NoValue)(
+  def dd[T <: dom.Node](style: U[js.Any] = NoValue,
+                        id: U[String] = NoValue,
+                        className: U[String] = NoValue,
+                        @exclude key: String | Int = null,
+                        @exclude ref: js.Function1[T, Unit] = null,
+                        @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2937,12 +2954,13 @@ trait Tags {
     CreateDOMElement("dd", json(), children = children.toJSArray)
 
   @inline
-  def radialGradient(style: U[js.Any] = NoValue,
-                     id: U[String] = NoValue,
-                     className: U[String] = NoValue,
-                     @exclude key: String | Int = null,
-                     @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                     @exclude extraProps: U[DOMProps] = NoValue)(
+  def radialGradient[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2954,12 +2972,12 @@ trait Tags {
     CreateDOMElement("radialGradient", json(), children = children.toJSArray)
 
   @inline
-  def rect(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def rect[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2971,12 +2989,13 @@ trait Tags {
     CreateDOMElement("rect", json(), children = children.toJSArray)
 
   @inline
-  def feDisplacementMap(style: U[js.Any] = NoValue,
-                        id: U[String] = NoValue,
-                        className: U[String] = NoValue,
-                        @exclude key: String | Int = null,
-                        @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-                        @exclude extraProps: U[DOMProps] = NoValue)(
+  def feDisplacementMap[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2990,12 +3009,12 @@ trait Tags {
                      children = children.toJSArray)
 
   @inline
-  def switch(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def switch[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -3007,12 +3026,12 @@ trait Tags {
     CreateDOMElement("switch", json(), children = children.toJSArray)
 
   @inline
-  def data(style: U[js.Any] = NoValue,
-           id: U[String] = NoValue,
-           className: U[String] = NoValue,
-           @exclude key: String | Int = null,
-           @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-           @exclude extraProps: U[DOMProps] = NoValue)(
+  def data[T <: dom.Node](style: U[js.Any] = NoValue,
+                          id: U[String] = NoValue,
+                          className: U[String] = NoValue,
+                          @exclude key: String | Int = null,
+                          @exclude ref: js.Function1[T, Unit] = null,
+                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -3024,24 +3043,25 @@ trait Tags {
     CreateDOMElement("data", json(), children = children.toJSArray)
 
   @inline
-  def img(style: U[js.Any] = NoValue,
-          id: U[String] = NoValue,
-          className: U[String] = NoValue,
-          @exclude key: String | Int = null,
-          @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-          @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
+  def img[T <: dom.Node](
+      style: U[js.Any] = NoValue,
+      id: U[String] = NoValue,
+      className: U[String] = NoValue,
+      @exclude key: String | Int = null,
+      @exclude ref: js.Function1[T, Unit] = null,
+      @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("img", props)
   }
 
   @inline
-  def strong(style: U[js.Any] = NoValue,
-             id: U[String] = NoValue,
-             className: U[String] = NoValue,
-             @exclude key: String | Int = null,
-             @exclude ref: js.Function1[_ <: dom.Node, Unit] = null,
-             @exclude extraProps: U[DOMProps] = NoValue)(
+  def strong[T <: dom.Node](style: U[js.Any] = NoValue,
+                            id: U[String] = NoValue,
+                            className: U[String] = NoValue,
+                            @exclude key: String | Int = null,
+                            @exclude ref: js.Function1[T, Unit] = null,
+                            @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
