@@ -43,3 +43,7 @@ publishArtifact in Test := false
 resolvers += Resolver.bintrayRepo("scalajs-react-interface", "maven")
 libraryDependencies += "org.scalatest" %%% "scalatest" % "3.0.0" % Test
 scalaJSStage in Global := FastOptStage
+
+
+//Tasks:
+Tasks.taskSettings
