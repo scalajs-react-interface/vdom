@@ -13,8 +13,6 @@ object Tasks {
       if (dest.exists()) logger.error("Tags.scala bak file already exists. Give up task!")
       else {
         IO.copyFile(src, dest)
-        val regex ="""^ @inline$\t"""
-
         val all = IO.read(src).split("""@inline""")
         val head = all.head
         val first = all.tail.filter(_.contains("dom.Node")).mkString("@inline")
