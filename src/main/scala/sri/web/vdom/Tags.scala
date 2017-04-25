@@ -17,7 +17,7 @@ import scala.scalajs.js.`|`
 
 trait Tags extends ReactEventAliases {
 
-  
+  @inline
   def solidcolor[T <: dom.Node](style: U[js.Any] = NoValue,
                                 id: U[String] = NoValue,
                                 className: U[String] = NoValue,
