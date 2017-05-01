@@ -1,3 +1,4 @@
+shellPrompt in ThisBuild := { state => Project.extract(state).currentRef.project + "> " }
 name := "vdom"
 
 //version := "2017.4.0-SNAPSHOT"
@@ -8,7 +9,7 @@ val scala211 = "2.11.11"
 
 val scala212 = "2.12.2"
 
-scalaVersion := scala211
+scalaVersion := scala212
 
 crossScalaVersions := Seq(scala211, scala212)
 
@@ -47,3 +48,11 @@ scalaJSStage in Global := FastOptStage
 
 //Tasks:
 Tasks.taskSettings
+
+//Integration Incubation and Test Project:
+import IntegrationProjectsSettings._
+val vdom = project in file(".")
+val incubationMacros = (project in file("./macros"))
+  .settings(commonSettings,macrosSettings).enablePlugins(ScalaJSPlugin).dependsOn(vdom)
+val incubation =  (project in file("./incubation"))
+  .settings(commonSettings,incubationSettings).enablePlugins(ScalaJSPlugin).dependsOn(incubationMacros)
