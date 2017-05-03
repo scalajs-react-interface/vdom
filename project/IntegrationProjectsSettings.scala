@@ -12,14 +12,13 @@ object IntegrationProjectsSettings {
     scalaVersion := "2.12.2",
     crossScalaVersions := Seq("2.11.11", "2.12.2"),
     scalacOptions ++= Seq(
-      "-Xlint",
+      //"-Xlint",
       "-unchecked",
       "-deprecation",
       "-feature",
       "-language:postfixOps",
       "-language:implicitConversions",
-      "-language:higherKinds",
-      "-language:existentials"),
+      "-language:higherKinds"),
     libraryDependencies ++= Seq(
       "com.lihaoyi" %%% "utest" % "0.4.5" % "test"
     ),
