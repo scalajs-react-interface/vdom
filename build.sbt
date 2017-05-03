@@ -21,8 +21,11 @@ scalacOptions ++= Seq(
 )
 
 //Dependencies
-libraryDependencies += "scalajs-react-interface" %%% "core" % "2017.3.26-beta" % Provided
-libraryDependencies += "scalajs-react-interface" %%% "universal" % "2017.4.9-beta" % Provided
+libraryDependencies ++= Seq(
+  "org.scala-lang" % "scala-reflect" % scalaVersion.value % Provided,
+  "scalajs-react-interface" %%% "core" % "2017.3.26-beta" % Provided,
+  "scalajs-react-interface" %%% "universal" % "2017.4.9-beta" % Provided
+)
 
 //bintray
 resolvers += Resolver.jcenterRepo

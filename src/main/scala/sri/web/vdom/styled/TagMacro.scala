@@ -1,4 +1,4 @@
-package sri.macros.web
+package sri.web.vdom.styled
 
 import scala.language.experimental.macros
 import scala.reflect.macros.whitebox
@@ -7,9 +7,7 @@ trait TypedProp[+A]
 private case object DummyProp extends TypedProp[Nothing]
 
 private class MacroImpl(val c: whitebox.Context) {
-
   import c.universe._
-
   def domChooseImpl(props: c.Tree*)(children: c.Tree*): c.Tree = {
     val domName = c.macroApplication.symbol.asTerm.name.toString
     val allProps = parseProps(props)
@@ -43,7 +41,7 @@ private class MacroImpl(val c: whitebox.Context) {
       }
       val propTermName = propName.symbol.asTerm.name.toString
       val v = {
-        val funcTpe = typeOf[scala.scalajs.js.UndefOr[sri.macros.web.SyntheticEventCallback]].toString
+        val funcTpe = typeOf[scala.scalajs.js.UndefOr[sri.web.vdom.styled.SyntheticEventCallback]].toString
         if (argTpe.get.toString == funcTpe) q"$propValue"
         else q"$propValue.asInstanceOf[js.Any]"
       }

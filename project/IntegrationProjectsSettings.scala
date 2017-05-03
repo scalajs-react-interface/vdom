@@ -31,10 +31,10 @@ object IntegrationProjectsSettings {
   val macrosSettings = Seq(
     name := "incubation-macros",
     libraryDependencies ++= Seq(
-      "org.scala-lang" % "scala-reflect" % scalaVersion.value,
+      "org.scala-lang" % "scala-reflect" % scalaVersion.value % "provided",
       //"org.scalameta" %% "scalameta" % "1.7.0" % "provided",
       "scalajs-react-interface" %%% "core" % "2017.3.26-beta" % "provided",
-      "scalajs-react-interface" %%% "macros" % "2017.3.26-beta" % "provided",
+      //"scalajs-react-interface" %%% "macros" % "2017.3.26-beta" % "provided",
       "org.scala-js" %%% "scalajs-dom" % "0.9.1" % "provided"
     )
   )
