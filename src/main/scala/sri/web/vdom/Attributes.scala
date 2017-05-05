@@ -329,79 +329,144 @@ trait SVGProps extends js.Object {
 
 @ScalaJSDefined
 trait EventProps extends js.Object {
-  var onTimeUpdate: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onAnimationStart: js.UndefOr[(_ <: SyntheticEvent[_]) => _] =
+  var onTimeUpdate: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onKeyUp: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onDrag: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onCompositionStart: js.UndefOr[(_ <: SyntheticEvent[_]) => _] =
+  var onAnimationStart
+    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onAnimationIteration: js.UndefOr[(_ <: SyntheticEvent[_]) => _] =
+  var onKeyUp: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onCanPlayThrough: js.UndefOr[(_ <: SyntheticEvent[_]) => _] =
+  var onDrag: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDragStart: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onLoadStart: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onMouseUp: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onKeyPress: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onError: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onDragExit: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onSelect: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onCompositionEnd: js.UndefOr[(_ <: SyntheticEvent[_]) => _] =
+  var onCompositionStart
+    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onTouchCancel: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onTouchEnd: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onTransitionEnd: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onSeeking: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onPlay: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onDoubleClick: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onDragOver: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onEnded: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onEmptied: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onMouseEnter: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onDragLeave: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onCompositionUpdate: js.UndefOr[(_ <: SyntheticEvent[_]) => _] =
+  var onAnimationIteration
+    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onMouseLeave: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onPlaying: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onMouseDown: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onSuspend: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onEncrypted: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onProgress: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onDurationChange: js.UndefOr[(_ <: SyntheticEvent[_]) => _] =
+  var onCanPlayThrough
+    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onFocus: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onCut: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onSeeked: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onLoadedData: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onStalled: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onCanPlay: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onKeyDown: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onTouchStart: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onBlur: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onAbort: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onChange: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onVolumeChange: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onSubmit: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onLoadedMetadata: js.UndefOr[(_ <: SyntheticEvent[_]) => _] =
+  var onDragStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onContextMenu: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onMouseMove: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onScroll: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onRateChange: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onAnimationEnd: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onWaiting: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onCopy: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onDragEnd: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onWheel: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onPause: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onDragEnter: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onClick: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onTouchMove: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onDrop: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onLoad: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onInput: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
-  var onPaste: js.UndefOr[(_ <: SyntheticEvent[_]) => _] = js.undefined
+  var onLoadStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onMouseUp: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onKeyPress: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onError: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onDragExit: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onSelect: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onCompositionEnd
+    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onTouchCancel: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onTouchEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onTransitionEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onSeeking: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onPlay: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onDoubleClick: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onDragOver: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onEnded: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onEmptied: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onMouseEnter: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onDragLeave: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onCompositionUpdate
+    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onMouseLeave: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onPlaying: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onMouseDown: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onSuspend: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onEncrypted: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onProgress: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onDurationChange
+    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onFocus: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onCut: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onSeeked: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onLoadedData: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onStalled: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onCanPlay: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onKeyDown: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onTouchStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onBlur: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onAbort: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onChange: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onVolumeChange: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onSubmit: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onLoadedMetadata
+    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onContextMenu: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onMouseMove: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onScroll: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onRateChange: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onAnimationEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onWaiting: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onCopy: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onDragEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onWheel: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onPause: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onDragEnter: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onClick: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onTouchMove: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onDrop: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onLoad: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onInput: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  var onPaste: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
 }
 
 @ScalaJSDefined

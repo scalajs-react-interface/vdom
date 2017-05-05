@@ -1157,6 +1157,8 @@ trait Tags extends ReactEventAliases {
   def a[T <: dom.Node](style: U[js.Any] = NoValue,
                        id: U[String] = NoValue,
                        className: U[String] = NoValue,
+                       href: U[String] = NoValue,
+                       target: U[String] = NoValue,
                        @exclude key: String | Int = null,
                        @exclude ref: js.Function1[T, Unit] = null,
                        @exclude extraProps: U[DOMProps] = NoValue)(
@@ -2168,6 +2170,7 @@ trait Tags extends ReactEventAliases {
   def div[T <: dom.Node](style: U[js.Any] = NoValue,
                          id: U[String] = NoValue,
                          className: U[String] = NoValue,
+                         onClick: U[ReactEventH => Unit] = NoValue,
                          @exclude key: String | Int = null,
                          @exclude ref: js.Function1[T, Unit] = null,
                          @exclude extraProps: U[DOMProps] = NoValue)(
