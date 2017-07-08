@@ -33,3 +33,5 @@ npm-debug.log
 
 #project
 incubation/assets/
+*.test.js
+*.test.js.map

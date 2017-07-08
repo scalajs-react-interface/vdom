@@ -60,6 +60,8 @@ trait ReactEventAliases {
   type ReactWheelEventTA = SyntheticWheelEvent[html.TextArea]
 }
 
+object ReactEventAliases extends ReactEventAliases
+
 final class ReactKeyboardEventOps[N <: dom.Node](
     private val e: SyntheticKeyboardEvent[N])
     extends AnyVal {

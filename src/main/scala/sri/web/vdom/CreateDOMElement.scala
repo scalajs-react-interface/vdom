@@ -1,7 +1,7 @@
 package sri.web.vdom
 
 import org.scalajs.dom
-import sri.core.{React, ReactElement, ReactNode, emptyJSArray}
+import sri.core.{CoreGlobals, React, ReactElement, ReactNode, emptyJSArray}
 
 import scala.scalajs.js.|
 import scala.scalajs.{LinkingInfo, js}
@@ -37,8 +37,7 @@ object CreateDOMElement {
           .updateDynamic("children")(js.Array(children: _*))
       js.Dynamic
         .literal(
-          `$$typeof` = js.Dynamic.global
-            .selectDynamic("REACT_ELEMENT_TYPE"),
+          `$$typeof` = CoreGlobals.REACT_ELEMENT_TYPE,
           `type` = ctor,
           props = props,
           ref = ref,

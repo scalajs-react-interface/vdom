@@ -1,10 +1,10 @@
 package sri.web.vdom
 
+import sri.macros.{FunctionObjectMacro, OptDefault, OptionalParam}
+
 import scala.scalajs.js
 import scala.scalajs.js.`|`
-import scala.scalajs.js.annotation.ScalaJSDefined
 
-@ScalaJSDefined
 trait HTMLProps extends js.Object {
   val defer: js.UndefOr[Boolean] = js.undefined
   val coords: js.UndefOr[String] = js.undefined
@@ -129,7 +129,6 @@ trait HTMLProps extends js.Object {
   val controls: js.UndefOr[Boolean] = js.undefined
 }
 
-@ScalaJSDefined
 trait SVGProps extends js.Object {
   val amplitude: js.UndefOr[Double] = js.undefined
   val numOctaves: js.UndefOr[Int] = js.undefined
@@ -327,147 +326,564 @@ trait SVGProps extends js.Object {
   val d: js.UndefOr[String] = js.undefined
 }
 
-@ScalaJSDefined
 trait EventProps extends js.Object {
-  var onTimeUpdate: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onTimeUpdate: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onAnimationStart
+  val onAnimationStart
     : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onKeyUp: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onKeyUp: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDrag: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onDrag: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onCompositionStart
+  val onCompositionStart
     : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onAnimationIteration
+  val onAnimationIteration
     : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onCanPlayThrough
+  val onCanPlayThrough
     : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDragStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onDragStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onLoadStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onLoadStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onMouseUp: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onMouseUp: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onKeyPress: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onKeyPress: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onError: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onError: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDragExit: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onDragExit: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onSelect: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onSelect: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onCompositionEnd
+  val onCompositionEnd
     : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onTouchCancel: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onTouchCancel: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onTouchEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onTouchEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onTransitionEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onTransitionEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onSeeking: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onSeeking: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onPlay: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onPlay: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDoubleClick: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onDoubleClick: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDragOver: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onDragOver: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onEnded: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onEnded: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onEmptied: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onEmptied: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onMouseEnter: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onMouseEnter: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDragLeave: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onDragLeave: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onCompositionUpdate
+  val onCompositionUpdate
     : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onMouseLeave: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onMouseLeave: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onPlaying: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onPlaying: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onMouseDown: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onMouseDown: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onSuspend: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onSuspend: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onEncrypted: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onEncrypted: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onProgress: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onProgress: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDurationChange
+  val onDurationChange
     : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onFocus: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onFocus: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onCut: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onCut: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onSeeked: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onSeeked: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onLoadedData: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onLoadedData: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onStalled: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onStalled: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onCanPlay: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onCanPlay: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onKeyDown: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onKeyDown: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onTouchStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onTouchStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onBlur: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onBlur: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onAbort: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onAbort: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onChange: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onChange: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onVolumeChange: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onVolumeChange: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onSubmit: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onSubmit: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onLoadedMetadata
+  val onLoadedMetadata
     : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onContextMenu: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onContextMenu: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onMouseMove: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onMouseMove: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onScroll: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onScroll: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onRateChange: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onRateChange: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onAnimationEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onAnimationEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onWaiting: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onWaiting: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onCopy: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onCopy: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDragEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onDragEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onWheel: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onWheel: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onPause: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onPause: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDragEnter: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onDragEnter: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onClick: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onClick: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onTouchMove: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onTouchMove: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onDrop: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onDrop: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onLoad: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onLoad: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onInput: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onInput: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  var onPaste: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onPaste: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
 }
 
-@ScalaJSDefined
 trait DOMProps extends HTMLProps with SVGProps with EventProps
+
+object HTMLProps {
+  @inline
+  def apply(
+      defer: OptionalParam[Boolean] = OptDefault,
+      coords: OptionalParam[String] = OptDefault,
+      span: OptionalParam[Int] = OptDefault,
+      method: OptionalParam[String] = OptDefault,
+      keyType: OptionalParam[String] = OptDefault,
+      challenge: OptionalParam[String] = OptDefault,
+      name: OptionalParam[String] = OptDefault,
+      formNoValidate: OptionalParam[Boolean] = OptDefault,
+      tabIndex: OptionalParam[Int] = OptDefault,
+      is: OptionalParam[String] = OptDefault,
+      accept: OptionalParam[String] = OptDefault,
+      loop: OptionalParam[Boolean] = OptDefault,
+      marginWidth: OptionalParam[String] = OptDefault,
+      step: OptionalParam[String] = OptDefault,
+      classID: OptionalParam[String] = OptDefault,
+      size: OptionalParam[Int] = OptDefault,
+      optimum: OptionalParam[Double] = OptDefault,
+      readOnly: OptionalParam[Boolean] = OptDefault,
+      pattern: OptionalParam[String] = OptDefault,
+      scrolling: OptionalParam[String] = OptDefault,
+      nonce: OptionalParam[String] = OptDefault,
+      cellSpacing: OptionalParam[String] = OptDefault,
+      frameBorder: OptionalParam[String] = OptDefault,
+      contentEditable: OptionalParam[String] = OptDefault,
+      role: OptionalParam[String] = OptDefault,
+      checked: OptionalParam[String] = OptDefault,
+      acceptCharset: OptionalParam[String] = OptDefault,
+      scope: OptionalParam[String] = OptDefault,
+      icon: OptionalParam[String] = OptDefault,
+      hrefLang: OptionalParam[String] = OptDefault,
+      data: OptionalParam[String] = OptDefault,
+      label: OptionalParam[String] = OptDefault,
+      hidden: OptionalParam[Boolean] = OptDefault,
+      marginHeight: OptionalParam[String] = OptDefault,
+      rel: OptionalParam[String] = OptDefault,
+      height: OptionalParam[Double] = OptDefault,
+      radioGroup: OptionalParam[String] = OptDefault,
+      min: OptionalParam[Double] = OptDefault,
+      selected: OptionalParam[Boolean] = OptDefault,
+      cellPadding: OptionalParam[String] = OptDefault,
+      srcDoc: OptionalParam[String] = OptDefault,
+      charSet: OptionalParam[String] = OptDefault,
+      placeholder: OptionalParam[String] = OptDefault,
+      open: OptionalParam[Boolean] = OptDefault,
+      inputMode: OptionalParam[String] = OptDefault,
+      dateTime: OptionalParam[String] = OptDefault,
+      crossOrigin: OptionalParam[String] = OptDefault,
+      autoFocus: OptionalParam[Boolean] = OptDefault,
+      formTarget: OptionalParam[String] = OptDefault,
+      poster: OptionalParam[String] = OptDefault,
+      htmlFor: OptionalParam[String] = OptDefault,
+      seamless: OptionalParam[String] = OptDefault,
+      dir: OptionalParam[String] = OptDefault,
+      low: OptionalParam[Double] = OptDefault,
+      id: OptionalParam[String] = OptDefault,
+      async: OptionalParam[Boolean] = OptDefault,
+      wrap: OptionalParam[String] = OptDefault,
+      autoComplete: OptionalParam[String] = OptDefault,
+      max: OptionalParam[Double] = OptDefault,
+      profile: OptionalParam[String] = OptDefault,
+      allowFullScreen: OptionalParam[Boolean] = OptDefault,
+      cite: OptionalParam[String] = OptDefault,
+      draggable: OptionalParam[Boolean] = OptDefault,
+      alt: OptionalParam[String] = OptDefault,
+      httpEquiv: OptionalParam[String] = OptDefault,
+      formMethod: OptionalParam[String] = OptDefault,
+      default: OptionalParam[Boolean] = OptDefault,
+      accessKey: OptionalParam[String] = OptDefault,
+      className: OptionalParam[String] = OptDefault,
+      srcLang: OptionalParam[String] = OptDefault,
+      sandbox: OptionalParam[String] = OptDefault,
+      src: OptionalParam[String] = OptDefault,
+      encType: OptionalParam[String] = OptDefault,
+      colSpan: OptionalParam[Int] = OptDefault,
+      content: OptionalParam[String] = OptDefault,
+      mediaGroup: OptionalParam[String] = OptDefault,
+      rowSpan: OptionalParam[Int] = OptDefault,
+      media: OptionalParam[String] = OptDefault,
+      useMap: OptionalParam[String] = OptDefault,
+      scoped: OptionalParam[String] = OptDefault,
+      disabled: OptionalParam[Boolean] = OptDefault,
+      target: OptionalParam[String] = OptDefault,
+      srcSet: OptionalParam[String] = OptDefault,
+      minLength: OptionalParam[Int] = OptDefault,
+      spellCheck: OptionalParam[Boolean] = OptDefault,
+      shape: OptionalParam[String] = OptDefault,
+      formEncType: OptionalParam[String] = OptDefault,
+      sizes: OptionalParam[String] = OptDefault,
+      manifest: OptionalParam[String] = OptDefault,
+      multiple: OptionalParam[Boolean] = OptDefault,
+      kind: OptionalParam[String] = OptDefault,
+      title: OptionalParam[String] = OptDefault,
+      allowTransparency: OptionalParam[Boolean] = OptDefault,
+      lang: OptionalParam[String] = OptDefault,
+      headers: OptionalParam[String] = OptDefault,
+      `type`: OptionalParam[String] = OptDefault,
+      form: OptionalParam[String] = OptDefault,
+      required: OptionalParam[Boolean] = OptDefault,
+      href: OptionalParam[String] = OptDefault,
+      start: OptionalParam[Int] = OptDefault,
+      capture: OptionalParam[Boolean] = OptDefault,
+      preload: OptionalParam[String] = OptDefault,
+      rows: OptionalParam[Int] = OptDefault,
+      width: OptionalParam[Double] = OptDefault,
+      autoPlay: OptionalParam[Boolean] = OptDefault,
+      reversed: OptionalParam[Boolean] = OptDefault,
+      download: OptionalParam[String] = OptDefault,
+      ue: OptionalParam[String | Double | Int] = OptDefault,
+      muted: OptionalParam[Boolean] = OptDefault,
+      noValidate: OptionalParam[Boolean] = OptDefault,
+      maxLength: OptionalParam[Int] = OptDefault,
+      action: OptionalParam[String] = OptDefault,
+      summary: OptionalParam[String] = OptDefault,
+      integrity: OptionalParam[String] = OptDefault,
+      contextMenu: OptionalParam[String] = OptDefault,
+      high: OptionalParam[Double] = OptDefault,
+      cols: OptionalParam[Int] = OptDefault,
+      formAction: OptionalParam[String] = OptDefault,
+      list: OptionalParam[String] = OptDefault,
+      keyParams: OptionalParam[String] = OptDefault,
+      controls: OptionalParam[Boolean] = OptDefault): DOMProps = {
+    import sri.universal.DangerousUnionToJSAnyImplicit._
+    val p = FunctionObjectMacro()
+    p.asInstanceOf[DOMProps]
+
+  }
+}
+
+object SVGProps {
+  @inline
+  def apply(
+      amplitude: OptionalParam[Double] = OptDefault,
+      numOctaves: OptionalParam[Int] = OptDefault,
+      colorInterpolation: OptionalParam[String] = OptDefault,
+      format: OptionalParam[String] = OptDefault,
+      divisor: OptionalParam[Double] = OptDefault,
+      kernelUnitLength: OptionalParam[Double] = OptDefault,
+      floodColor: OptionalParam[String] = OptDefault,
+      clipPathUnits: OptionalParam[String] = OptDefault,
+      x: OptionalParam[String | Double] = OptDefault,
+      contentStyleType: OptionalParam[String] = OptDefault,
+      begin: OptionalParam[String] = OptDefault,
+      intercept: OptionalParam[String] = OptDefault,
+      xlinkRole: OptionalParam[String] = OptDefault,
+      maskUnits: OptionalParam[String] = OptDefault,
+      accumulate: OptionalParam[String] = OptDefault,
+      contentScriptType: OptionalParam[String] = OptDefault,
+      k2: OptionalParam[Double] = OptDefault,
+      in: OptionalParam[String] = OptDefault,
+      textRendering: OptionalParam[String] = OptDefault,
+      kernelMatrix: OptionalParam[js.Array[Double]] = OptDefault,
+      keyTimes: OptionalParam[String] = OptDefault,
+      shapeRendering: OptionalParam[String] = OptDefault,
+      dy: OptionalParam[Double] = OptDefault,
+      mask: OptionalParam[String] = OptDefault,
+      pointsAtZ: OptionalParam[Double] = OptDefault,
+      seed: OptionalParam[Int] = OptDefault,
+      tableValues: OptionalParam[String] = OptDefault,
+      overflow: OptionalParam[String] = OptDefault,
+      xlinkShow: OptionalParam[String] = OptDefault,
+      strokeDasharray: OptionalParam[String] = OptDefault,
+      maskContentUnits: OptionalParam[String] = OptDefault,
+      textAnchor: OptionalParam[String] = OptDefault,
+      arabicForm: OptionalParam[String] = OptDefault,
+      xlinkActuate: OptionalParam[String] = OptDefault,
+      keyPoints: OptionalParam[String] = OptDefault,
+      y: OptionalParam[String | Double] = OptDefault,
+      strokeOpacity: OptionalParam[String | Double] = OptDefault,
+      refY: OptionalParam[Double] = OptDefault,
+      viewBox: OptionalParam[String] = OptDefault,
+      patternTransform: OptionalParam[String] = OptDefault,
+      cx: OptionalParam[String | Double] = OptDefault,
+      textDecoration: OptionalParam[String] = OptDefault,
+      scale: OptionalParam[Double] = OptDefault,
+      filterUnits: OptionalParam[String] = OptDefault,
+      externalResourcesRequired: OptionalParam[Double] = OptDefault,
+      baseFrequency: OptionalParam[Double] = OptDefault,
+      g2: OptionalParam[String] = OptDefault,
+      stroke: OptionalParam[String] = OptDefault,
+      clipPath: OptionalParam[String] = OptDefault,
+      result: OptionalParam[String] = OptDefault,
+      specularExponent: OptionalParam[Double] = OptDefault,
+      fillOpacity: OptionalParam[String | Double] = OptDefault,
+      horizOriginY: OptionalParam[Double] = OptDefault,
+      fontSizeAdjust: OptionalParam[String | Double] = OptDefault,
+      clipRule: OptionalParam[String] = OptDefault,
+      limitingConeAngle: OptionalParam[Double] = OptDefault,
+      fx: OptionalParam[Double] = OptDefault,
+      additive: OptionalParam[String] = OptDefault,
+      local: OptionalParam[String] = OptDefault,
+      paintOrder: OptionalParam[String] = OptDefault,
+      stopOpacity: OptionalParam[String | Double] = OptDefault,
+      colorInterpolationFilters: OptionalParam[String] = OptDefault,
+      calcMode: OptionalParam[String] = OptDefault,
+      refX: OptionalParam[Double] = OptDefault,
+      pointsAtY: OptionalParam[Double] = OptDefault,
+      repeatDur: OptionalParam[String] = OptDefault,
+      dur: OptionalParam[String | Double] = OptDefault,
+      fontStyle: OptionalParam[String] = OptDefault,
+      in2: OptionalParam[String] = OptDefault,
+      direction: OptionalParam[String] = OptDefault,
+      enableBackground: OptionalParam[String] = OptDefault,
+      pathLength: OptionalParam[Double] = OptDefault,
+      colorRendering: OptionalParam[String] = OptDefault,
+      g1: OptionalParam[String] = OptDefault,
+      rx: OptionalParam[String | Double] = OptDefault,
+      specularConstant: OptionalParam[Int] = OptDefault,
+      x2: OptionalParam[String | Double] = OptDefault,
+      viewTarget: OptionalParam[String] = OptDefault,
+      exponent: OptionalParam[Double] = OptDefault,
+      cursor: OptionalParam[String] = OptDefault,
+      radius: OptionalParam[String | Double] = OptDefault,
+      yChannelSelector: OptionalParam[String] = OptDefault,
+      cy: OptionalParam[String | Double] = OptDefault,
+      xmlBase: OptionalParam[String] = OptDefault,
+      to: OptionalParam[String | Double] = OptDefault,
+      attributeName: OptionalParam[String] = OptDefault,
+      glyphRef: OptionalParam[String] = OptDefault,
+      xmlSpace: OptionalParam[String] = OptDefault,
+      filter: OptionalParam[String] = OptDefault,
+      rotate: OptionalParam[String | Double] = OptDefault,
+      lengthAdjust: OptionalParam[String] = OptDefault,
+      repeatCount: OptionalParam[String | Int] = OptDefault,
+      gradientTransform: OptionalParam[String] = OptDefault,
+      fy: OptionalParam[Double] = OptDefault,
+      version: OptionalParam[String] = OptDefault,
+      xlinkHref: OptionalParam[String] = OptDefault,
+      markerWidth: OptionalParam[String] = OptDefault,
+      fontFamily: OptionalParam[String] = OptDefault,
+      gradientUnits: OptionalParam[String] = OptDefault,
+      points: OptionalParam[String] = OptDefault,
+      pointsAtX: OptionalParam[Double] = OptDefault,
+      kerning: OptionalParam[String] = OptDefault,
+      offset: OptionalParam[String | Double] = OptDefault,
+      strokeDashoffset: OptionalParam[String] = OptDefault,
+      horizOriginX: OptionalParam[Double] = OptDefault,
+      glyphOrientationHorizontal: OptionalParam[String] = OptDefault,
+      elevation: OptionalParam[Double] = OptDefault,
+      letterSpacing: OptionalParam[String] = OptDefault,
+      preserveAspectRatio: OptionalParam[Boolean] = OptDefault,
+      strokeLinecap: OptionalParam[String] = OptDefault,
+      y1: OptionalParam[String | Double] = OptDefault,
+      baseProfile: OptionalParam[String] = OptDefault,
+      horizAdvX: OptionalParam[Double] = OptDefault,
+      wordSpacing: OptionalParam[String | Double] = OptDefault,
+      xmlLang: OptionalParam[String] = OptDefault,
+      xChannelSelector: OptionalParam[String] = OptDefault,
+      order: OptionalParam[Int] = OptDefault,
+      fill: OptionalParam[String] = OptDefault,
+      systemLanguage: OptionalParam[Boolean] = OptDefault,
+      operator: OptionalParam[String] = OptDefault,
+      by: OptionalParam[Double] = OptDefault,
+      origin: OptionalParam[String] = OptDefault,
+      markerUnits: OptionalParam[String] = OptDefault,
+      markerHeight: OptionalParam[String] = OptDefault,
+      pointerEvents: OptionalParam[String] = OptDefault,
+      floodOpacity: OptionalParam[String | Double] = OptDefault,
+      writingMode: OptionalParam[String | Double] = OptDefault,
+      patternContentUnits: OptionalParam[String] = OptDefault,
+      xlinkType: OptionalParam[String] = OptDefault,
+      xlinkArcrole: OptionalParam[String] = OptDefault,
+      from: OptionalParam[Double] = OptDefault,
+      preserveAlpha: OptionalParam[Boolean] = OptDefault,
+      fontVariant: OptionalParam[String] = OptDefault,
+      requiredExtensions: OptionalParam[String] = OptDefault,
+      baselineShift: OptionalParam[String] = OptDefault,
+      bias: OptionalParam[Double] = OptDefault,
+      requiredFeatures: OptionalParam[String] = OptDefault,
+      fontSize: OptionalParam[String | Double] = OptDefault,
+      ry: OptionalParam[String | Double] = OptDefault,
+      mode: OptionalParam[String] = OptDefault,
+      y2: OptionalParam[String | Double] = OptDefault,
+      edgeMode: OptionalParam[String] = OptDefault,
+      markerMid: OptionalParam[String] = OptDefault,
+      startOffset: OptionalParam[String] = OptDefault,
+      strokeMiterlimit: OptionalParam[String] = OptDefault,
+      x1: OptionalParam[String | Double] = OptDefault,
+      end: OptionalParam[Double] = OptDefault,
+      ues: OptionalParam[String] = OptDefault,
+      attributeType: OptionalParam[String] = OptDefault,
+      k1: OptionalParam[Double] = OptDefault,
+      targetY: OptionalParam[Double] = OptDefault,
+      glyphOrientationVertical: OptionalParam[String] = OptDefault,
+      keySplines: OptionalParam[String] = OptDefault,
+      opacity: OptionalParam[String] = OptDefault,
+      markerStart: OptionalParam[String] = OptDefault,
+      primitiveUnits: OptionalParam[String] = OptDefault,
+      alignmentBaseline: OptionalParam[String] = OptDefault,
+      patternUnits: OptionalParam[String] = OptDefault,
+      surfaceScale: OptionalParam[Double] = OptDefault,
+      k4: OptionalParam[Double] = OptDefault,
+      dx: OptionalParam[Double] = OptDefault,
+      allowReorder: OptionalParam[Boolean] = OptDefault,
+      r: OptionalParam[String | Double] = OptDefault,
+      clip: OptionalParam[String] = OptDefault,
+      k3: OptionalParam[Double] = OptDefault,
+      restart: OptionalParam[String] = OptDefault,
+      fontStretch: OptionalParam[String] = OptDefault,
+      imageRendering: OptionalParam[String] = OptDefault,
+      stdDeviation: OptionalParam[String | Double] = OptDefault,
+      xlinkTitle: OptionalParam[String] = OptDefault,
+      colorProfile: OptionalParam[String] = OptDefault,
+      spacing: OptionalParam[String] = OptDefault,
+      stopColor: OptionalParam[String] = OptDefault,
+      strokeLinejoin: OptionalParam[String] = OptDefault,
+      lightingColor: OptionalParam[String] = OptDefault,
+      transform: OptionalParam[String] = OptDefault,
+      fontWeight: OptionalParam[String] = OptDefault,
+      diffuseConstant: OptionalParam[Double] = OptDefault,
+      visibility: OptionalParam[String] = OptDefault,
+      unicodeBidi: OptionalParam[String] = OptDefault,
+      targetX: OptionalParam[Double] = OptDefault,
+      strokeWidth: OptionalParam[String | Double] = OptDefault,
+      dominantBaseline: OptionalParam[String] = OptDefault,
+      textLength: OptionalParam[String | Double] = OptDefault,
+      slope: OptionalParam[String | Double] = OptDefault,
+      azimuth: OptionalParam[Double] = OptDefault,
+      zoomAndPan: OptionalParam[String] = OptDefault,
+      spreadMethod: OptionalParam[String] = OptDefault,
+      markerEnd: OptionalParam[String] = OptDefault,
+      z: OptionalParam[String | Double] = OptDefault,
+      display: OptionalParam[String] = OptDefault,
+      fillRule: OptionalParam[String] = OptDefault,
+      stitchTiles: OptionalParam[String] = OptDefault,
+      d: OptionalParam[String] = OptDefault): DOMProps = {
+    import sri.universal.DangerousUnionToJSAnyImplicit._
+    val p = FunctionObjectMacro()
+    p.asInstanceOf[DOMProps]
+  }
+}
+
+object EventProps {
+  @inline
+  def apply(
+      onTimeUpdate: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onAnimationStart: OptionalParam[(_ <: SyntheticEvent[_]) => _] =
+        OptDefault,
+      onKeyUp: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onDrag: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onCompositionStart: OptionalParam[(_ <: SyntheticEvent[_]) => _] =
+        OptDefault,
+      onAnimationIteration: OptionalParam[(_ <: SyntheticEvent[_]) => _] =
+        OptDefault,
+      onCanPlayThrough: OptionalParam[(_ <: SyntheticEvent[_]) => _] =
+        OptDefault,
+      onDragStart: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onLoadStart: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onMouseUp: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onKeyPress: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onError: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onDragExit: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onSelect: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onCompositionEnd: OptionalParam[(_ <: SyntheticEvent[_]) => _] =
+        OptDefault,
+      onTouchCancel: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onTouchEnd: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onTransitionEnd: OptionalParam[(_ <: SyntheticEvent[_]) => _] =
+        OptDefault,
+      onSeeking: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onPlay: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onDoubleClick: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onDragOver: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onEnded: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onEmptied: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onMouseEnter: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onDragLeave: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onCompositionUpdate: OptionalParam[(_ <: SyntheticEvent[_]) => _] =
+        OptDefault,
+      onMouseLeave: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onPlaying: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onMouseDown: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onSuspend: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onEncrypted: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onProgress: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onDurationChange: OptionalParam[(_ <: SyntheticEvent[_]) => _] =
+        OptDefault,
+      onFocus: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onCut: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onSeeked: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onLoadedData: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onStalled: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onCanPlay: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onKeyDown: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onTouchStart: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onBlur: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onAbort: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onChange: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onVolumeChange: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onSubmit: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onLoadedMetadata: OptionalParam[(_ <: SyntheticEvent[_]) => _] =
+        OptDefault,
+      onContextMenu: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onMouseMove: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onScroll: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onRateChange: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onAnimationEnd: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onWaiting: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onCopy: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onDragEnd: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onWheel: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onPause: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onDragEnter: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onClick: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onTouchMove: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onDrop: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onLoad: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onInput: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onPaste: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault)
+    : DOMProps = {
+    import sri.universal.DangerousUnionToJSAnyImplicit._
+    val p = FunctionObjectMacro()
+    p.asInstanceOf[DOMProps]
+  }
+
+}

@@ -6,7 +6,7 @@ package object vdom {
 
   object tags extends Tags
 
-  object tagsPrefix_< {
+  object tagsPrefix_< extends ReactEventAliases {
     @inline def < = tags
   }
 
