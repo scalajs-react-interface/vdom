@@ -1,6 +1,7 @@
 package sri.web.vdom
 
-import sri.macros.{FunctionObjectMacro, OptDefault, OptionalParam}
+import scalajsplus.{OptDefault, OptionalParam}
+import scalajsplus.macros.FunctionObjectMacro
 
 import scala.scalajs.js
 import scala.scalajs.js.`|`
@@ -329,8 +330,7 @@ trait SVGProps extends js.Object {
 trait EventProps extends js.Object {
   val onTimeUpdate: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  val onAnimationStart
-    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onAnimationStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
   val onKeyUp: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
@@ -342,8 +342,7 @@ trait EventProps extends js.Object {
   val onAnimationIteration
     : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  val onCanPlayThrough
-    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onCanPlayThrough: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
   val onDragStart: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
@@ -359,8 +358,7 @@ trait EventProps extends js.Object {
     js.undefined
   val onSelect: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  val onCompositionEnd
-    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onCompositionEnd: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
   val onTouchCancel: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
@@ -399,8 +397,7 @@ trait EventProps extends js.Object {
     js.undefined
   val onProgress: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  val onDurationChange
-    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onDurationChange: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
   val onFocus: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
@@ -428,8 +425,7 @@ trait EventProps extends js.Object {
     js.undefined
   val onSubmit: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
-  val onLoadedMetadata
-    : js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+  val onLoadedMetadata: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
   val onContextMenu: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
@@ -593,7 +589,7 @@ object HTMLProps {
       list: OptionalParam[String] = OptDefault,
       keyParams: OptionalParam[String] = OptDefault,
       controls: OptionalParam[Boolean] = OptDefault): DOMProps = {
-    import sri.universal.DangerousUnionToJSAnyImplicit._
+    import scalajsplus.DangerousUnionToJSAnyImplicit._
     val p = FunctionObjectMacro()
     p.asInstanceOf[DOMProps]
 
@@ -797,7 +793,7 @@ object SVGProps {
       fillRule: OptionalParam[String] = OptDefault,
       stitchTiles: OptionalParam[String] = OptDefault,
       d: OptionalParam[String] = OptDefault): DOMProps = {
-    import sri.universal.DangerousUnionToJSAnyImplicit._
+    import scalajsplus.DangerousUnionToJSAnyImplicit._
     val p = FunctionObjectMacro()
     p.asInstanceOf[DOMProps]
   }
@@ -828,8 +824,7 @@ object EventProps {
         OptDefault,
       onTouchCancel: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
       onTouchEnd: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
-      onTransitionEnd: OptionalParam[(_ <: SyntheticEvent[_]) => _] =
-        OptDefault,
+      onTransitionEnd: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
       onSeeking: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
       onPlay: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
       onDoubleClick: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
@@ -881,7 +876,7 @@ object EventProps {
       onInput: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
       onPaste: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault)
     : DOMProps = {
-    import sri.universal.DangerousUnionToJSAnyImplicit._
+    import scalajsplus.DangerousUnionToJSAnyImplicit._
     val p = FunctionObjectMacro()
     p.asInstanceOf[DOMProps]
   }

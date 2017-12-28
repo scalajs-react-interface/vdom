@@ -16,9 +16,7 @@ class InlineStyleSheetWebTest extends BaseTest {
                           background := "red")
   }
 
-  test(
-    "InlineStyleSheetWebTest",
-    () => {
+  test("InlineStyleSheetWebTest") {
 
       val input = styles.container.asInstanceOf[js.Dynamic]
       expect(input).toEqual(
@@ -27,5 +25,4 @@ class InlineStyleSheetWebTest extends BaseTest {
                            alignItems = "center",
                            background = "red"))
     }
-  )
 }

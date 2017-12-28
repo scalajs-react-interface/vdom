@@ -2,12 +2,9 @@ package sri.web.vdom
 
 import org.scalajs.dom
 import sri.core._
-import sri.macros.{
-  FunctionObjectMacro,
-  exclude,
-  OptDefault => NoValue,
-  OptionalParam => U
-}
+import scalajsplus.macros.{FunctionObjectMacro, exclude}
+import scalajsplus.{OptDefault => NoValue, OptionalParam => U}
+
 import sri.universal.MergeJSObjects
 
 import scala.scalajs.js
@@ -343,13 +340,12 @@ trait Tags extends ReactEventAliases {
   }
 
   @inline
-  def feDistantLight[T <: dom.Node](
-      style: U[js.Any] = NoValue,
-      id: U[String] = NoValue,
-      className: U[String] = NoValue,
-      @exclude key: String | Int = null,
-      @exclude ref: js.Function1[T, Unit] = null,
-      @exclude extraProps: U[DOMProps] = NoValue)(
+  def feDistantLight[T <: dom.Node](style: U[js.Any] = NoValue,
+                                    id: U[String] = NoValue,
+                                    className: U[String] = NoValue,
+                                    @exclude key: String | Int = null,
+                                    @exclude ref: js.Function1[T, Unit] = null,
+                                    @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -774,7 +770,7 @@ trait Tags extends ReactEventAliases {
       @exclude key: String | Int = null,
       @exclude ref: js.Function1[T, Unit] = null,
       @exclude extraProps: U[DOMProps] = NoValue): ReactElement = {
-    import sri.universal.DangerousUnionToJSAnyImplicit._
+    import scalajsplus.DangerousUnionToJSAnyImplicit._
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("input", props)
@@ -1772,9 +1768,7 @@ trait Tags extends ReactEventAliases {
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
-    CreateDOMElement("feSpecularLighting",
-                     props,
-                     children = children.toJSArray)
+    CreateDOMElement("feSpecularLighting", props, children = children.toJSArray)
   }
 
   @inline
@@ -1817,13 +1811,12 @@ trait Tags extends ReactEventAliases {
   }
 
   @inline
-  def feGaussianBlur[T <: dom.Node](
-      style: U[js.Any] = NoValue,
-      id: U[String] = NoValue,
-      className: U[String] = NoValue,
-      @exclude key: String | Int = null,
-      @exclude ref: js.Function1[T, Unit] = null,
-      @exclude extraProps: U[DOMProps] = NoValue)(
+  def feGaussianBlur[T <: dom.Node](style: U[js.Any] = NoValue,
+                                    id: U[String] = NoValue,
+                                    className: U[String] = NoValue,
+                                    @exclude key: String | Int = null,
+                                    @exclude ref: js.Function1[T, Unit] = null,
+                                    @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2145,13 +2138,12 @@ trait Tags extends ReactEventAliases {
   }
 
   @inline
-  def linearGradient[T <: dom.Node](
-      style: U[js.Any] = NoValue,
-      id: U[String] = NoValue,
-      className: U[String] = NoValue,
-      @exclude key: String | Int = null,
-      @exclude ref: js.Function1[T, Unit] = null,
-      @exclude extraProps: U[DOMProps] = NoValue)(
+  def linearGradient[T <: dom.Node](style: U[js.Any] = NoValue,
+                                    id: U[String] = NoValue,
+                                    className: U[String] = NoValue,
+                                    @exclude key: String | Int = null,
+                                    @exclude ref: js.Function1[T, Unit] = null,
+                                    @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2254,6 +2246,8 @@ trait Tags extends ReactEventAliases {
   def textarea[T <: dom.Node](style: U[js.Any] = NoValue,
                               id: U[String] = NoValue,
                               className: U[String] = NoValue,
+                              onChange: U[ReactEventI => _] = NoValue,
+                              value: U[String] = NoValue,
                               @exclude key: String | Int = null,
                               @exclude ref: js.Function1[T, Unit] = null,
                               @exclude extraProps: U[DOMProps] = NoValue)(
@@ -2316,13 +2310,12 @@ trait Tags extends ReactEventAliases {
   }
 
   @inline
-  def radialGradient[T <: dom.Node](
-      style: U[js.Any] = NoValue,
-      id: U[String] = NoValue,
-      className: U[String] = NoValue,
-      @exclude key: String | Int = null,
-      @exclude ref: js.Function1[T, Unit] = null,
-      @exclude extraProps: U[DOMProps] = NoValue)(
+  def radialGradient[T <: dom.Node](style: U[js.Any] = NoValue,
+                                    id: U[String] = NoValue,
+                                    className: U[String] = NoValue,
+                                    @exclude key: String | Int = null,
+                                    @exclude ref: js.Function1[T, Unit] = null,
+                                    @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
@@ -2456,9 +2449,7 @@ trait Tags extends ReactEventAliases {
 
   @inline
   def feDisplacementMapC(children: ReactNode*) = {
-    CreateDOMElement("feDisplacementMap",
-                     json(),
-                     children = children.toJSArray)
+    CreateDOMElement("feDisplacementMap", json(), children = children.toJSArray)
   }
 
   @inline
@@ -3232,9 +3223,7 @@ trait Tags extends ReactEventAliases {
 
   @inline
   def feDiffuseLightingC(children: ReactNode*) = {
-    CreateDOMElement("feDiffuseLighting",
-                     json(),
-                     children = children.toJSArray)
+    CreateDOMElement("feDiffuseLighting", json(), children = children.toJSArray)
   }
 
   @inline
