@@ -1,11 +1,11 @@
 name := "vdom"
 
-//version := "2017.12.0-SNAPSHOT"
+//version := "2018.9.0-SNAPSHOT"
 
 enablePlugins(ScalaJSPlugin)
 
 
-val scala212 = "2.12.4"
+val scala212 = "2.12.6"
 
 scalaVersion := scala212
 

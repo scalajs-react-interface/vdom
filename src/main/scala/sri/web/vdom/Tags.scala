@@ -720,6 +720,8 @@ trait Tags extends ReactEventAliases {
   @inline
   def select[T <: dom.Node](style: U[js.Any] = NoValue,
                             id: U[String] = NoValue,
+                            value: U[String] = NoValue,
+                            onChange: U[ReactEventI => _] = NoValue,
                             className: U[String] = NoValue,
                             @exclude key: String | Int = null,
                             @exclude ref: js.Function1[T, Unit] = null,
@@ -765,6 +767,8 @@ trait Tags extends ReactEventAliases {
       placeholder: U[String] = NoValue,
       `type`: U[String] = NoValue,
       defaultChecked: U[Boolean] = NoValue,
+      disabled: U[Boolean] = NoValue,
+      autoFocus: U[Boolean] = NoValue,
       onChange: U[ReactEventI => _] = NoValue,
       value: U[String | Int | Double] = NoValue,
       @exclude key: String | Int = null,
@@ -884,10 +888,14 @@ trait Tags extends ReactEventAliases {
   def svg[T <: dom.Node](style: U[js.Any] = NoValue,
                          id: U[String] = NoValue,
                          className: U[String] = NoValue,
+                         viewBox: U[String] = NoValue,
+                         width: U[String | Double | Int] = NoValue,
+                         height: U[String | Double | Int] = NoValue,
                          @exclude key: String | Int = null,
                          @exclude ref: js.Function1[T, Unit] = null,
                          @exclude extraProps: U[DOMProps] = NoValue)(
       children: ReactNode*): ReactElement = {
+    import scalajsplus.DangerousUnionToJSAnyImplicit._
     val props = FunctionObjectMacro()
     extraProps.foreach(v => { MergeJSObjects(props, v) })
     CreateDOMElement("svg", props, children = children.toJSArray)
@@ -1159,6 +1167,7 @@ trait Tags extends ReactEventAliases {
                        className: U[String] = NoValue,
                        href: U[String] = NoValue,
                        target: U[String] = NoValue,
+                       onClick: U[ReactEventH => _] = NoValue,
                        @exclude key: String | Int = null,
                        @exclude ref: js.Function1[T, Unit] = null,
                        @exclude extraProps: U[DOMProps] = NoValue)(
@@ -1958,6 +1967,7 @@ trait Tags extends ReactEventAliases {
   def option[T <: dom.Node](style: U[js.Any] = NoValue,
                             id: U[String] = NoValue,
                             className: U[String] = NoValue,
+                            value: U[String] = NoValue,
                             @exclude key: String | Int = null,
                             @exclude ref: js.Function1[T, Unit] = null,
                             @exclude extraProps: U[DOMProps] = NoValue)(
@@ -2233,6 +2243,7 @@ trait Tags extends ReactEventAliases {
   def form[T <: dom.Node](style: U[js.Any] = NoValue,
                           id: U[String] = NoValue,
                           className: U[String] = NoValue,
+                          onSubmit: U[ReactEventH => _] = NoValue,
                           @exclude key: String | Int = null,
                           @exclude ref: js.Function1[T, Unit] = null,
                           @exclude extraProps: U[DOMProps] = NoValue)(
@@ -2248,6 +2259,9 @@ trait Tags extends ReactEventAliases {
                               className: U[String] = NoValue,
                               onChange: U[ReactEventI => _] = NoValue,
                               value: U[String] = NoValue,
+                              placeholder: U[String] = NoValue,
+                              cols: U[Int] = NoValue,
+                              rows: U[Int] = NoValue,
                               @exclude key: String | Int = null,
                               @exclude ref: js.Function1[T, Unit] = null,
                               @exclude extraProps: U[DOMProps] = NoValue)(
