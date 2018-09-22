@@ -21,8 +21,8 @@ scalacOptions ++= Seq(
 //Dependencies
 libraryDependencies ++= Seq(
   "org.scala-lang" % "scala-reflect" % scalaVersion.value % Provided,
-  "scalajs-react-interface" %%% "core" % "2018.2.2-RC" % Provided,
-  "scalajs-react-interface" %%% "universal" % "2018.2.2-RC" % Provided
+  "scalajs-react-interface" %%% "core" % "2018.9.22-RC" % Provided,
+  "scalajs-react-interface" %%% "universal" % "2018.9.22-RC" % Provided
 )
 
 //bintray
@@ -44,6 +44,7 @@ publishArtifact in Test := false
 //Test
 resolvers += Resolver.bintrayRepo("scalajs-react-interface", "maven")
 scalaJSUseMainModuleInitializer in Test := true
+scalaJSUseTestModuleInitializer in Test := false
 
 scalaJSLinkerConfig ~= (_.withModuleKind(ModuleKind.CommonJSModule))
 
@@ -76,8 +77,8 @@ resolvers ++=Seq(Resolver.bintrayRepo("scalajs-react-interface", "maven"),
   Resolver.bintrayRepo("scalajs-plus", "maven"))
 
 libraryDependencies ++= Seq(
-  "org.scala-js" %%% "scalajs-dom" % "0.9.4" % Test,
-  "scalajs-jest" %%% "core" % "2018.2.2-RC" % Test
+  "org.scala-js" %%% "scalajs-dom" % "0.9.6" % Test,
+  "scalajs-jest" %%% "core" % "2018.8.14-RC" % Test
 )
 //scalaJSStage in Global := FastOptStage
 scalaJSStage in Global := FullOptStage
