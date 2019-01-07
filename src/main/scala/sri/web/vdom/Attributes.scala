@@ -391,6 +391,10 @@ trait EventProps extends js.Object {
     js.undefined
   val onMouseDown: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
+  val onMouseOver: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
+  val onMouseOut: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
+    js.undefined
   val onSuspend: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
     js.undefined
   val onEncrypted: js.UndefOr[js.Function1[_ <: SyntheticEvent[_], Unit]] =
@@ -838,6 +842,8 @@ object EventProps {
       onMouseLeave: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
       onPlaying: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
       onMouseDown: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onMouseOver: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
+      onMouseOut: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
       onSuspend: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
       onEncrypted: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
       onProgress: OptionalParam[(_ <: SyntheticEvent[_]) => _] = OptDefault,
